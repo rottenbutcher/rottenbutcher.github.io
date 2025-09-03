@@ -34,15 +34,51 @@
         a:hover {
             text-decoration: underline;
         }
-        /* 프로젝트 섹션 스타일 */
-        .project {
+        /* --- 추가된 스타일 --- */
+        /* 클릭 가능한 제목 스타일 */
+        .collapsible {
+            cursor: pointer;
+            user-select: none; /* 텍스트 드래그 방지 */
+            position: relative;
+            padding-right: 30px; /* 아이콘 공간 확보 */
+        }
+        /* 제목 옆 화살표 아이콘 */
+        .collapsible::after {
+            content: '▼';
+            font-size: 0.8em;
+            color: #0056b3;
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: transform 0.2s ease-in-out;
+        }
+        /* 활성화(열림) 상태일 때 화살표 회전 */
+        .collapsible.active::after {
+            transform: translateY(-50%) rotate(180deg);
+        }
+        /* 숨겨질 콘텐츠 기본 스타일 */
+        .content {
+            padding: 0 18px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
             background-color: #f9f9f9;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        /* --- 여기까지 --- */
+        .project {
             border: 1px solid #ddd;
             border-radius: 5px;
             padding: 15px;
+            margin: 15px 0;
+            background-color: #fff;
+        }
+        .project:last-child {
             margin-bottom: 15px;
         }
-        .project h3 {
+        .project h4 {
             margin-top: 0;
             color: #333;
         }
@@ -74,30 +110,34 @@
             <p>저는 열정이 넘치는 공학도입니다. 현재 인공지능과 딥러닝에 대해 깊이 공부하고 있으며, 문제 해결 과정에서 큰 보람을 느끼고 있습니다.</p>
         </section>
 
-        <section id="projects">
-            <h2>Projects</h2>
-            <section id="python-projects">
-                <h3>My Python Projects 🐍</h3>
-                
-                <div class="project">
-                    <h4>categorizer.py</h4>
-                    <p>이 스크립트는 여러 폴더 속에 있는 이미지를 직접 categorize하는 작업을 수행하는 프로그램입니다. 코드를 보려면 '코드 보기'를, 다운로드 하기를 원한다면 '다운로드'를 클릭해주세요. </p>
-                    <div class="project-links">
-                        <a href="https://github.com/rottenbutcher/rottenbutcher.github.io/blob/main/categorizer.py" target="_blank">코드 보기</a>
-                        <a href="https://raw.githubusercontent.com/rottenbutcher/rottenbutcher.github.io/main/categorizer.py" download>다운로드</a>
+        <!-- Projects 섹션 구조 변경 -->
+        <section id="projects-section">
+            <h2 class="collapsible">Projects</h2>
+            <div class="content">
+                 <section id="python-projects">
+                    <h3>My Python Projects 🐍</h3>
+                    
+                    <div class="project">
+                        <h4>categorizer.py</h4>
+                        <p>이 스크립트는 여러 폴더 속에 있는 이미지를 직접 categorize하는 작업을 수행하는 프로그램입니다. 코드를 보려면 '코드 보기'를, 다운로드 하기를 원한다면 '다운로드'를 클릭해주세요. </p>
+                        <div class="project-links">
+                            <a href="https://github.com/rottenbutcher/rottenbutcher.github.io/blob/main/categorizer.py" target="_blank">코드 보기</a>
+                            <a href="https://raw.githubusercontent.com/rottenbutcher/rottenbutcher.github.io/main/categorizer.py" download>다운로드</a>
+                        </div>
                     </div>
-                </div>
-
-                <div class="project">
-                    <h4>number_classfier.py</h4>
-                    <p>이 스크립트는 MNIST의 숫자 손글씨 데이터과 CNN을 활용하여 모델을 학습시킨 후, 직접 쓴 손글씨를 유추하는 기능을 담고 있습니다. 코드를 보려면 '코드 보기'를, 다운로드 하기를 원한다면 '다운로드'를 클릭해주세요.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/rottenbutcher/rottenbutcher.github.io/blob/main/number_classifier.py" target="_blank">코드 보기</a>
-                        <a href="https://raw.githubusercontent.com/rottenbutcher/rottenbutcher.github.io/main/number_classifier.py" download>다운로드</a>
+    
+                    <div class="project">
+                        <h4>number_classfier.py</h4>
+                        <p>이 스크립트는 MNIST의 숫자 손글씨를 CNN을 활용하여 학습시킨 후, 직접 쓴 손글씨를 유추하는 기능을 담고 있습니다. 코드를 보려면 '코드 보기'를, 다운로드 하기를 원한다면 '다운로드'를 클릭해주세요.</p>
+                        <div class="project-links">
+                            <a href="https://github.com/rottenbutcher/rottenbutcher.github.io/blob/main/number_classifier.py" target="_blank">코드 보기</a>
+                            <a href="https://raw.githubusercontent.com/rottenbutcher/rottenbutcher.github.io/main/number_classifier.py" download>다운로드</a>
+                        </div>
                     </div>
-                </div>
-            </section>
+                </section>
+            </div>
         </section>
+
         <section id="interests">
             <h2>취미 및 관심사</h2>
             <ul>
@@ -120,5 +160,22 @@
         </footer>
     </div>
 
+    <!-- 추가된 JavaScript -->
+    <script>
+        const collapsibles = document.querySelectorAll(".collapsible");
+
+        collapsibles.forEach(item => {
+            item.addEventListener("click", function () {
+                this.classList.toggle("active");
+                const content = this.nextElementSibling;
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                }
+            });
+        });
+    </script>
 </body>
 </html>
+
