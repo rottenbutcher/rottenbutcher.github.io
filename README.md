@@ -1,4 +1,4 @@
-# leejunseo.com
+# rottenbutcher.github.io
 
 Junseo Lee의 개인 홈페이지 (GitHub Pages, 순수 HTML/CSS).
 
@@ -10,7 +10,6 @@ research.html       Research & Projects
 publications.html   Presentations & Publications
 awards.html         Awards
 hobby.html          Hobby
-CNAME               커스텀 도메인 (leejunseo.com)
 .nojekyll           GitHub Pages가 파일을 그대로 서빙하도록
 assets/
   style.css         전체 디자인
@@ -26,24 +25,11 @@ assets/
 
 ## 배포 (GitHub Pages)
 
-1. GitHub에서 새 저장소 생성 (예: `rottenbutcher.github.io` 또는 `homepage`)
-2. 이 폴더의 모든 파일(숨김 파일 `.nojekyll` 포함)을 업로드 후 커밋
-3. 저장소 **Settings → Pages**
-   - Source: `Deploy from a branch`, Branch: `main` / `(root)` → Save
-   - Custom domain: `leejunseo.com` 입력 → Save
-   - DNS 확인이 끝나면 **Enforce HTTPS** 체크
+- 저장소 이름: `rottenbutcher.github.io` → 사이트 주소 https://rottenbutcher.github.io
+- Settings → Pages: Source `Deploy from a branch`, Branch `main` / `(root)`
+- `main`에 푸시하면 1~2분 뒤 자동 반영됩니다.
 
-## 도메인 연결 (도메인 구입한 곳의 DNS 설정)
-
-| 타입 | 호스트 | 값 |
-|---|---|---|
-| A | @ | 185.199.108.153 |
-| A | @ | 185.199.109.153 |
-| A | @ | 185.199.110.153 |
-| A | @ | 185.199.111.153 |
-| CNAME | www | rottenbutcher.github.io |
-
-DNS 반영에는 몇 분~최대 하루 정도 걸릴 수 있습니다.
+나중에 개인 도메인을 쓰려면 루트에 `CNAME` 파일(내용: 도메인 이름 한 줄)을 추가하고 DNS를 GitHub Pages로 연결하면 됩니다.
 
 ## 내용 수정
 
