@@ -194,7 +194,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
 }
 
 /* ---------- Sections ---------- */
-main { padding-bottom: 80px; }
+main.container { padding-bottom: 96px; }
 .section { margin-top: 64px; }
 .section-head {
   display: flex; align-items: baseline; justify-content: space-between; gap: 16px;
