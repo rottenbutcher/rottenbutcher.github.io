@@ -277,3 +277,12 @@ main { padding-bottom: 80px; }
 .skills dd { margin: 0; }
 @media (max-width: 620px) { .skills { grid-template-columns: 1fr; gap: 2px; } .skills dd { margin-bottom: 10px; } }
 .avatar:has(img) { background: #fff; }
+
+/* Entry with a thumbnail (posters) */
+.entry .with-thumb { display: grid; grid-template-columns: 1fr 150px; gap: 24px; align-items: start; }
+.thumb { display: block; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: var(--surface); transition: border-color .15s ease, box-shadow .15s ease; }
+.thumb:hover { border-color: var(--sea); box-shadow: 0 6px 16px rgba(11,37,69,0.10); }
+.thumb img { width: 100%; height: auto; }
+.link-btn { display: inline-flex; align-items: center; gap: 6px; font-size: 0.85rem; font-weight: 500; }
+.link-btn svg { width: 14px; height: 14px; }
+@media (max-width: 620px) { .entry .with-thumb { grid-template-columns: 1fr; } .thumb { max-width: 200px; } }
