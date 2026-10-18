@@ -260,3 +260,20 @@ main { padding-bottom: 80px; }
 }
 .site-footer .container { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
 .site-footer a { color: var(--muted); }
+
+/* Bullet list inside an entry */
+.entry ul.points { margin: 8px 0 0; padding-left: 18px; color: var(--ink-soft); }
+.entry ul.points li { margin: 4px 0; }
+.entry .authors { margin: 6px 0 0; color: var(--ink-soft); font-size: 0.95rem; }
+.entry .authors strong { color: var(--ink); }
+.entry h3.paper { font-family: var(--serif); font-weight: 600; font-size: 1.12rem; line-height: 1.4; }
+
+/* About paragraph */
+.about { font-size: 1.05rem; color: var(--ink-soft); max-width: 820px; margin: 0; }
+
+/* Skills grid */
+.skills { display: grid; grid-template-columns: 160px 1fr; gap: 10px 24px; margin: 0; }
+.skills dt { color: var(--muted); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; padding-top: 3px; }
+.skills dd { margin: 0; }
+@media (max-width: 620px) { .skills { grid-template-columns: 1fr; gap: 2px; } .skills dd { margin-bottom: 10px; } }
+.avatar:has(img) { background: #fff; }
