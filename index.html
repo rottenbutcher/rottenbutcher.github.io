@@ -7,42 +7,22 @@
   <meta name="description" content="Junseo Lee — Naval Architecture and Ocean Engineering, Seoul National University. Machine learning for maritime perception and structural design.">
   <meta name="theme-color" content="#050608">
   <meta property="og:title" content="Junseo Lee">
-  <meta property="og:description" content="Naval Architecture & Ocean Engineering, SNU · Machine learning for maritime perception and structural design">
-  <meta property="og:image" content="https://rottenbutcher.github.io/assets/bg-poster.jpg">
+  <meta property="og:description" content="Junseo Lee — Naval Architecture and Ocean Engineering, Seoul National University. Machine learning for maritime perception and structural design.">
   <meta property="og:url" content="https://rottenbutcher.github.io/">
+  <meta property="og:image" content="https://rottenbutcher.github.io/assets/bg-poster.jpg">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preload" as="image" href="assets/bg-poster.jpg">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
   <link rel="stylesheet" href="assets/site.css">
 </head>
-<body>
+<body data-page="home">
 
-  <!-- 배경 영상: assets/bg.(mp4|webm) = PC, assets/bg-mobile.(mp4|webm) = 모바일 -->
+  <!-- 배경 영상 -->
   <video class="bg-video" muted loop playsinline autoplay preload="auto" poster="assets/bg-poster.jpg" aria-hidden="true"></video>
   <div class="bg-dim" aria-hidden="true"></div>
 
-  <!-- ===================== Header ===================== -->
-  <header class="site-header">
-    <div class="wrap">
-      <a class="brand" href="#top">JUNSEO LEE<span>.</span></a>
-      <ul class="nav">
-        <li><a href="#about">About</a></li>
-        <li><a href="#research">Research &amp; Projects</a></li>
-        <li><a href="#publications">Presentations &amp; Publications</a></li>
-        <li><a href="#awards">Awards &amp; Honors</a></li>
-        <li><a href="#hobby">Hobby</a></li>
-      </ul>
-      <div class="header-right">
-        <a class="pill" href="assets/cv.pdf" download="Junseo_Lee_CV.pdf">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
-          CV
-        </a>
-        <button class="menu-btn" aria-label="Menu" aria-expanded="false">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-        </button>
-      </div>
-    </div>
-  </header>
+  <!-- 상단 메뉴와 푸터는 assets/site.js 의 NAV 에서 한 번에 관리합니다 -->
+  <header class="site-header"></header>
 
   <!-- ===================== Hero ===================== -->
   <section class="hero" id="top">
@@ -73,7 +53,6 @@
 
   <main class="content">
 
-    <!-- ===================== About ===================== -->
     <section class="section" id="about">
       <div class="wrap">
         <div class="sec-head reveal"><h2>About</h2><span class="idx">01</span></div>
@@ -105,192 +84,85 @@
       </div>
     </section>
 
-    <!-- ===================== Research & Projects ===================== -->
-    <section class="section" id="research">
+    <!-- ===================== Recent ===================== -->
+    <!-- 새 소식은 맨 위에 <li> 블록을 복사해서 추가하세요 -->
+    <section class="section" id="recent">
       <div class="wrap">
-        <div class="sec-head reveal"><h2>Research &amp; Projects</h2><span class="idx">02</span></div>
-
-        <h3 class="sub-title reveal">Research Experience</h3>
-        <ul class="rows">
-          <li class="row reveal">
-            <div class="when">Aug. 2026 – Present</div>
-            <div>
-              <h3>Undergraduate Intern</h3>
-              <p class="org">OST Lab., Seoul National University · Advisor: Prof. Dokyun Kim</p>
-              <ul>
-                <li>AI-based double hull tanker midship optimisation tool development</li>
-                <li>Multi-fidelity fluid–structure interaction analysis</li>
-              </ul>
-            </div>
+        <div class="sec-head reveal"><h2>Recent</h2><span class="idx">02</span></div>
+        <ul class="news-list">
+          <li class="reveal">
+            <a class="news" href="awards.html">
+              <span class="when">Oct. 2026</span>
+              <span class="what">
+                <span class="kind">Honor</span>
+                <strong>Selected as a 2026 ABS Scholar</strong>
+                <span class="org">American Bureau of Shipping (ABS)</span>
+              </span>
+              <span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></span>
+            </a>
           </li>
-          <li class="row reveal">
-            <div class="when">Aug. 2025 – Feb. 2026</div>
-            <div>
-              <h3>Undergraduate Visiting Researcher</h3>
-              <p class="org">MORIN Lab., KAIST · Advisor: Prof. Jinwhan Kim</p>
-              <ul>
-                <li><strong>LiDAR-based maritime vessel re-identification (ReID).</strong> Developed CIEF-Net, a neural network that integrates local curvature features with spatial coordinates through early fusion for vessel re-identification.</li>
-                <li><strong>Cross-view representation learning under partial observations.</strong> Developed a cross-view masked autoencoder that learns vessel representations by reconstructing a target view from partial observations of another viewpoint.</li>
-                <li>Organized existing maritime sensor datasets for model development and evaluation, and participated in field experiments at Jeongok Port.</li>
-              </ul>
-              <div class="tags"><span class="tag">KROS 2026</span><span class="tag">UR 2026</span></div>
-            </div>
+          <li class="reveal">
+            <a class="news" href="awards.html">
+              <span class="when">Sep. 2026</span>
+              <span class="what">
+                <span class="kind">Award</span>
+                <strong>2nd Prize, Ocean Engineering CAE Contest</strong>
+                <span class="org">KSOE 2026 Fall Conference · AIDSHIP, team leader</span>
+              </span>
+              <span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></span>
+            </a>
           </li>
-        </ul>
-
-        <h3 class="sub-title reveal">Projects</h3>
-        <ul class="rows">
-          <li class="row reveal">
-            <div class="when">Sep. 2026</div>
-            <div>
-              <h3>AIDSHIP — AI-based Midship Section Design Support Software</h3>
-              <p class="org">Ocean Engineering CAE Contest (KSOE) · Team Leader</p>
-              <p class="desc">CSR-based structural assessment, sensitivity-based cost/weight optimisation, and a RAG-based LLM assistant for double hull tanker midship design.</p>
-              <div class="tags"><span class="tag gold">2nd Prize</span></div>
-            </div>
+          <li class="reveal">
+            <a class="news" href="research.html">
+              <span class="when">Aug. 2026</span>
+              <span class="what">
+                <span class="kind">Research</span>
+                <strong>Joined OST Lab., Seoul National University</strong>
+                <span class="org">Undergraduate Intern · Advisor: Prof. Dokyun Kim</span>
+              </span>
+              <span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></span>
+            </a>
           </li>
-          <li class="row reveal">
-            <div class="when">Jun. 2022</div>
-            <div>
-              <h3>Collision Detection Algorithm for Autonomous Ships</h3>
-              <p class="org">Autonomous Ship Contest for Freshmen, Seoul National University</p>
-              <div class="tags"><span class="tag gold">DSME Prize</span></div>
-            </div>
+          <li class="reveal">
+            <a class="news" href="publications.html">
+              <span class="when">Jul. 2026</span>
+              <span class="what">
+                <span class="kind">Presentation</span>
+                <strong>Poster presentation at UR 2026, Osaka</strong>
+                <span class="org">Maritime vessel re-identification under partial observations</span>
+              </span>
+              <span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></span>
+            </a>
           </li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- ===================== Presentations & Publications ===================== -->
-    <section class="section" id="publications">
-      <div class="wrap">
-        <div class="sec-head reveal"><h2>Presentations &amp; Publications</h2><span class="idx">03</span></div>
-        <h3 class="sub-title reveal">Poster Presentations</h3>
-        <div class="cards">
-          <article class="card reveal">
-            <div class="meta">Sep. 2026 · KSOE Fall Conference</div>
-            <h3>AI 기반 선박 중앙단면 최적설계 지원 프로그램 개발</h3>
-            <p class="authors"><strong>이준서 (Junseo Lee)</strong>, 정우진, 진승우</p>
-            <div class="tags"><span class="tag">KSOE 2026</span><span class="tag gold">2nd Prize</span></div>
-          </article>
-          <article class="card reveal">
-            <div class="meta">Jul. 2026 · Osaka, Japan</div>
-            <h3>Maritime Vessel Re-Identification under Partial Observations Using Cross-View Masked Autoencoder</h3>
-            <p class="authors"><strong>Junseo Lee</strong>, Dongwook Lee, Sol Han, and Jinwhan Kim</p>
-            <div class="tags"><span class="tag">UR 2026</span></div>
-          </article>
-          <article class="card reveal">
-            <div class="meta">Feb. 2026 · PyeongChang, Korea</div>
-            <h3>Curvature-Integrated Early Fusion Network for LiDAR-Based Marine Vessel Re-Identification</h3>
-            <p class="authors"><strong>Junseo Lee</strong>, Dongwook Lee, and Jinwhan Kim</p>
-            <div class="tags"><span class="tag">KROS 2026</span></div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ===================== Awards & Honors ===================== -->
-    <section class="section" id="awards">
-      <div class="wrap">
-        <div class="sec-head reveal"><h2>Awards &amp; Honors</h2><span class="idx">04</span></div>
-
-        <h3 class="sub-title reveal">Honors &amp; Scholarships</h3>
-        <ul class="rows">
-          <li class="row reveal">
-            <div class="when">Oct. 2026</div>
-            <div>
-              <h3>ABS Scholarship</h3>
-              <p class="org">American Bureau of Shipping (ABS)</p>
-              <p class="desc">Selected as a 2026 ABS scholar in recognition of research capability in naval architecture and ocean engineering.</p>
-              <div class="tags"><span class="tag gold">Scholarship</span></div>
-            </div>
+          <li class="reveal">
+            <a class="news" href="awards.html">
+              <span class="when">Jun. 2026</span>
+              <span class="what">
+                <span class="kind">Honor</span>
+                <strong>Jeonggong Foundation Scholarship</strong>
+                <span class="org">Jeonggong Foundation (정공재단)</span>
+              </span>
+              <span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></span>
+            </a>
           </li>
-          <li class="row reveal">
-            <div class="when">Jun. 2026</div>
-            <div>
-              <h3>Jeonggong Foundation Scholarship</h3>
-              <p class="org">Jeonggong Foundation (정공재단)</p>
-              <div class="tags"><span class="tag gold">Scholarship</span></div>
-            </div>
+          <li class="reveal">
+            <a class="news" href="publications.html">
+              <span class="when">Feb. 2026</span>
+              <span class="what">
+                <span class="kind">Presentation</span>
+                <strong>Poster presentation at KROS 2026, PyeongChang</strong>
+                <span class="org">LiDAR-based marine vessel re-identification (CIEF-Net)</span>
+              </span>
+              <span class="go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg></span>
+            </a>
           </li>
         </ul>
-
-        <h3 class="sub-title reveal">Awards</h3>
-        <ul class="rows">
-          <li class="row reveal">
-            <div class="when">Sep. 2026</div>
-            <div>
-              <h3>2nd Prize, Ocean Engineering CAE Contest</h3>
-              <p class="org">The Korean Society of Ocean Engineers (KSOE)</p>
-              <p class="desc">Team leader — LLM-based midship optimisation software development.</p>
-              <div class="tags"><span class="tag gold">2nd Prize</span></div>
-            </div>
-          </li>
-          <li class="row reveal">
-            <div class="when">Jun. 2022</div>
-            <div>
-              <h3>DSME Prize, Autonomous Ship Contest for Freshmen</h3>
-              <p class="org">Seoul National University</p>
-              <p class="desc">Developed a collision detection algorithm.</p>
-              <div class="tags"><span class="tag gold">DSME Prize</span></div>
-            </div>
-          </li>
-        </ul>
-
-        <h3 class="sub-title reveal">Military Service</h3>
-        <ul class="rows">
-          <li class="row reveal">
-            <div class="when">Feb. 2024 – Aug. 2025</div>
-            <div>
-              <h3>DMZ East Corridor Patrol</h3>
-              <p class="org">Discharged as Sergeant</p>
-              <ul>
-                <li>Commendation for Successful Defection Inducement Operation (CJCS, Aug. 2024)</li>
-                <li>Certificate of Achievement (UNCMAC-S, Aug. 2025)</li>
-              </ul>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- ===================== Hobby ===================== -->
-    <section class="section" id="hobby">
-      <div class="wrap">
-        <div class="sec-head reveal"><h2>Hobby</h2><span class="idx">05</span></div>
-        <article class="feature reveal">
-          <div>
-            <div class="meta">Side project · 2026</div>
-            <h3>Upbit LSTM Trader</h3>
-            <p>An end-to-end crypto trading research pipeline for the top-5 KRW markets on Upbit. It collects 5-minute candles, trains a 2-layer LSTM on a local GPU (RTX 5060) to forecast 30-minute returns, and runs the exported ONNX model every five minutes on a free-tier Oracle Cloud CPU instance — in paper-trading mode by default.</p>
-            <ul>
-              <li><strong>Leakage-aware evaluation</strong> — chronological train / validation / test split with label purging at the boundaries; scalers and buy thresholds are fitted on past data only.</li>
-              <li><strong>Model comparison</strong> — a Gaussian HMM baseline evaluated against the LSTM on the same bars, trading costs and risk limits.</li>
-              <li><strong>Execution safeguards</strong> — performance gates before any live order, stop-loss / take-profit and drawdown limits, and duplicate-safe order handling.</li>
-            </ul>
-            <div class="tags">
-              <span class="tag">Python</span><span class="tag">PyTorch</span><span class="tag">LSTM</span>
-              <span class="tag">HMM</span><span class="tag">ONNX Runtime</span><span class="tag">Oracle Cloud</span>
-            </div>
-            <p class="note">Built for learning and research — not investment advice.</p>
-          </div>
-          <a class="pill" href="https://github.com/rottenbutcher/upbit-lstm-trader" target="_blank" rel="noopener">View on GitHub</a>
-        </article>
       </div>
     </section>
 
   </main>
 
-  <footer class="site-footer">
-    <div class="wrap">
-      <span>© <span id="year">2026</span> Junseo Lee</span>
-      <span class="links">
-        <a href="mailto:junseo777@snu.ac.kr">Email</a>
-        <a href="https://github.com/rottenbutcher" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://www.linkedin.com/in/jslee1211" target="_blank" rel="noopener">LinkedIn</a>
-      </span>
-    </div>
-  </footer>
+  <footer class="site-footer"></footer>
 
   <script src="assets/site.js"></script>
 </body>

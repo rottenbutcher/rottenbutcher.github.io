@@ -5,12 +5,15 @@ Junseo Lee의 개인 홈페이지 (GitHub Pages, 순수 HTML/CSS).
 ## 폴더 구조
 
 ```
-index.html          한 페이지 사이트 (배경 영상 + About / Research / Publications / Awards / Hobby)
-research.html 등    예전 주소 호환용 — index.html의 해당 섹션으로 자동 이동
+index.html          메인 (배경 영상 + About + Recent)
+research.html       Research & Projects
+publications.html   Presentations & Publications
+awards.html         Awards & Honors
+hobby.html          Hobby
 .nojekyll           GitHub Pages가 파일을 그대로 서빙하도록
 assets/
   site.css          전체 디자인 (강조색은 맨 위 --accent 한 줄로 변경)
-  site.js           배경 영상 재생, 스크롤 효과, 모바일 메뉴
+  site.js           상단 메뉴·푸터(NAV), 배경 영상 재생, 스크롤 효과, 모바일 메뉴
   bg.mp4 / bg.webm                 배경 영상 (PC)
   bg-mobile.mp4 / bg-mobile.webm   배경 영상 (모바일, 가벼운 버전)
   bg-poster.jpg     영상이 로드되기 전 / 동작 줄이기 설정 시 보이는 정지 화면

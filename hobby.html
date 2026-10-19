@@ -2,12 +2,63 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Junseo Lee</title>
-  <meta http-equiv="refresh" content="0; url=index.html#hobby">
-  <link rel="canonical" href="https://rottenbutcher.github.io/#hobby">
-  <script>location.replace("index.html#hobby");</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Hobby · Junseo Lee</title>
+  <meta name="description" content="Junseo Lee — Hobby.">
+  <meta name="theme-color" content="#050608">
+  <meta property="og:title" content="Hobby · Junseo Lee">
+  <meta property="og:description" content="Junseo Lee — Hobby.">
+  <meta property="og:image" content="https://rottenbutcher.github.io/assets/bg-poster.jpg">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" as="image" href="assets/bg-poster.jpg">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+  <link rel="stylesheet" href="assets/site.css">
 </head>
-<body style="background:#050608;color:#f4f5f7;font-family:system-ui,sans-serif">
-  <p><a href="index.html#hobby" style="color:#3cf0c8">Continue to rottenbutcher.github.io</a></p>
+<body data-page="hobby">
+
+  <!-- 배경 영상 -->
+  <video class="bg-video" muted loop playsinline autoplay preload="auto" poster="assets/bg-poster.jpg" aria-hidden="true"></video>
+  <div class="bg-dim" aria-hidden="true"></div>
+
+  <!-- 상단 메뉴와 푸터는 assets/site.js 의 NAV 에서 한 번에 관리합니다 -->
+  <header class="site-header"></header>
+
+  <section class="page-hero">
+    <div class="wrap">
+      <p class="eyebrow"><span class="num">05</span> Junseo Lee</p>
+      <h1>Hobby</h1>
+      <p class="sub">Side projects outside the lab.</p>
+    </div>
+  </section>
+
+  <main class="content">
+    <section class="section" id="hobby">
+      <div class="wrap">
+        <article class="feature reveal">
+          <div>
+            <div class="meta">Side project · 2026</div>
+            <h3>Upbit LSTM Trader</h3>
+            <p>An end-to-end crypto trading research pipeline for the top-5 KRW markets on Upbit. It collects 5-minute candles, trains a 2-layer LSTM on a local GPU (RTX 5060) to forecast 30-minute returns, and runs the exported ONNX model every five minutes on a free-tier Oracle Cloud CPU instance — in paper-trading mode by default.</p>
+            <ul>
+              <li><strong>Leakage-aware evaluation</strong> — chronological train / validation / test split with label purging at the boundaries; scalers and buy thresholds are fitted on past data only.</li>
+              <li><strong>Model comparison</strong> — a Gaussian HMM baseline evaluated against the LSTM on the same bars, trading costs and risk limits.</li>
+              <li><strong>Execution safeguards</strong> — performance gates before any live order, stop-loss / take-profit and drawdown limits, and duplicate-safe order handling.</li>
+            </ul>
+            <div class="tags">
+              <span class="tag">Python</span><span class="tag">PyTorch</span><span class="tag">LSTM</span>
+              <span class="tag">HMM</span><span class="tag">ONNX Runtime</span><span class="tag">Oracle Cloud</span>
+            </div>
+            <p class="note">Built for learning and research — not investment advice.</p>
+          </div>
+          <a class="pill" href="https://github.com/rottenbutcher/upbit-lstm-trader" target="_blank" rel="noopener">View on GitHub</a>
+        </article>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer"></footer>
+
+  <script src="assets/site.js"></script>
 </body>
 </html>
