@@ -13,7 +13,7 @@ hobby.html          Hobby
 .nojekyll           GitHub Pages가 파일을 그대로 서빙하도록
 assets/
   site.css          전체 디자인 (강조색은 맨 위 --accent 한 줄로 변경)
-  site.js           상단 메뉴·푸터(NAV), 배경 영상 재생, 스크롤 효과, 모바일 메뉴
+  site.js           배경 영상 재생, 스크롤 효과, 모바일 메뉴 (상단 메뉴는 각 HTML 파일 안에 있음)
   bg.mp4 / bg.webm                 배경 영상 (PC)
   bg-mobile.mp4 / bg-mobile.webm   배경 영상 (모바일, 가벼운 버전)
   bg-poster.jpg     영상이 로드되기 전 / 동작 줄이기 설정 시 보이는 정지 화면

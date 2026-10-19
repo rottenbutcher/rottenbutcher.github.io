@@ -13,7 +13,8 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preload" as="image" href="assets/bg-poster.jpg">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
-  <link rel="stylesheet" href="assets/site.css">
+  <script>document.documentElement.classList.add("js")</script>
+  <link rel="stylesheet" href="assets/site.css?v=20261019b">
 </head>
 <body data-page="home">
 
@@ -21,8 +22,28 @@
   <video class="bg-video" muted loop playsinline autoplay preload="auto" poster="assets/bg-poster.jpg" aria-hidden="true"></video>
   <div class="bg-dim" aria-hidden="true"></div>
 
-  <!-- 상단 메뉴와 푸터는 assets/site.js 의 NAV 에서 한 번에 관리합니다 -->
-  <header class="site-header"></header>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="#top">JUNSEO LEE<span>.</span></a>
+      <!-- 메뉴를 바꾸면 index / research / publications / awards / hobby 5개 파일 모두 같이 수정하세요 -->
+      <ul class="nav">
+          <li><a href="#about">About</a></li>
+          <li><a href="research.html">Research &amp; Projects</a></li>
+          <li><a href="publications.html">Presentations &amp; Publications</a></li>
+          <li><a href="awards.html">Awards &amp; Honors</a></li>
+          <li><a href="hobby.html">Hobby</a></li>
+      </ul>
+      <div class="header-right">
+        <a class="pill" href="assets/cv.pdf" download="Junseo_Lee_CV.pdf">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+          CV
+        </a>
+        <button class="menu-btn" aria-label="Menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
 
   <!-- ===================== Hero ===================== -->
   <section class="hero" id="top">
@@ -162,8 +183,17 @@
 
   </main>
 
-  <footer class="site-footer"></footer>
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>© 2026 Junseo Lee</span>
+      <span class="links">
+        <a href="mailto:junseo777@snu.ac.kr">Email</a>
+        <a href="https://github.com/rottenbutcher" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/jslee1211" target="_blank" rel="noopener">LinkedIn</a>
+      </span>
+    </div>
+  </footer>
 
-  <script src="assets/site.js"></script>
+  <script src="assets/site.js?v=20261019b"></script>
 </body>
 </html>
