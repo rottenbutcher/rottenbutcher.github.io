@@ -2,91 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hobby · Junseo Lee</title>
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/style.css">
-  <style>
-    .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-    .gallery figure { margin: 0; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
-    .gallery img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
-    .gallery figcaption { padding: 12px 14px; font-size: 0.92rem; color: var(--ink-soft); }
-    @media (max-width: 800px) { .gallery { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 500px) { .gallery { grid-template-columns: 1fr; } }
-    .project { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; }
-    .project-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; flex-wrap: wrap; }
-    .project h3 { font-family: var(--serif); font-size: 1.45rem; font-weight: 600; margin: 0; }
-    .project .kicker { font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin: 0 0 6px; }
-    .project p { color: var(--ink-soft); margin: 14px 0 0; }
-    .project ul { margin: 14px 0 0; padding-left: 18px; color: var(--ink-soft); }
-    .project li { margin: 6px 0; }
-    .project .tags { margin-top: 18px; }
-    .project .note { font-size: 0.85rem; color: var(--muted); margin-top: 18px; }
-  </style>
+  <title>Junseo Lee</title>
+  <meta http-equiv="refresh" content="0; url=index.html#hobby">
+  <link rel="canonical" href="https://rottenbutcher.github.io/#hobby">
+  <script>location.replace("index.html#hobby");</script>
 </head>
-<body>
-
-  <section class="page-banner">
-    <div class="container">
-      <p class="crumb"><a href="index.html">Home</a> / Hobby</p>
-      <h1>Hobby</h1>
-      <p>Side projects and life outside the lab.</p>
-    </div>
-  </section>
-
-  <main class="container">
-    <section class="section">
-
-      <h2 class="subhead">Side Projects</h2>
-      <article class="project" style="margin-top:16px">
-        <div class="project-head">
-          <div>
-            <p class="kicker">Personal project · 2026</p>
-            <h3>Upbit LSTM Trader</h3>
-          </div>
-          <a class="btn" href="https://github.com/rottenbutcher/upbit-lstm-trader" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.25.45-2.28 1.19-3.08-.12-.29-.52-1.46.11-3.04 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.58.23 2.75.11 3.04.74.8 1.19 1.83 1.19 3.08 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5Z"/></svg>
-            View on GitHub
-          </a>
-        </div>
-
-        <p>An end-to-end crypto trading research pipeline for the top-5 KRW markets on Upbit. It collects 5-minute candles, trains a 2-layer LSTM on a local GPU (RTX 5060) to forecast 30-minute returns, and runs the exported ONNX model every five minutes on a free-tier Oracle Cloud CPU instance — in paper-trading mode by default.</p>
-
-        <ul>
-          <li><strong>Leakage-aware evaluation</strong> — chronological train / validation / test split with label purging at the boundaries; scalers and buy thresholds are fitted on past data only.</li>
-          <li><strong>Model comparison</strong> — a Gaussian HMM baseline evaluated against the LSTM on the same bars, trading costs and risk limits.</li>
-          <li><strong>Execution safeguards</strong> — performance gates before any live order, stop-loss / take-profit and drawdown limits, and duplicate-safe order handling.</li>
-        </ul>
-
-        <div class="tags">
-          <span class="tag">Python</span>
-          <span class="tag">PyTorch</span>
-          <span class="tag">LSTM</span>
-          <span class="tag">HMM</span>
-          <span class="tag">ONNX Runtime</span>
-          <span class="tag">Oracle Cloud</span>
-        </div>
-
-        <p class="note">Built for learning and research — not investment advice.</p>
-      </article>
-
-      <!--
-        사진 갤러리를 추가하고 싶으면 assets/hobby/ 폴더에 사진을 넣고 아래 블록을 사용하세요.
-        <h2 class="subhead">Photos</h2>
-        <div class="gallery">
-          <figure>
-            <img src="assets/hobby/photo1.jpg" alt="">
-            <figcaption>사진 설명</figcaption>
-          </figure>
-        </div>
-      -->
-
-    </section>
-  </main>
-
-  <script src="assets/main.js"></script>
+<body style="background:#050608;color:#f4f5f7;font-family:system-ui,sans-serif">
+  <p><a href="index.html#hobby" style="color:#3cf0c8">Continue to rottenbutcher.github.io</a></p>
 </body>
 </html>

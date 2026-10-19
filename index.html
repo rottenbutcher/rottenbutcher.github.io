@@ -2,161 +2,296 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Junseo Lee</title>
   <meta name="description" content="Junseo Lee — Naval Architecture and Ocean Engineering, Seoul National University. Machine learning for maritime perception and structural design.">
+  <meta name="theme-color" content="#050608">
   <meta property="og:title" content="Junseo Lee">
-  <meta property="og:description" content="Naval Architecture and Ocean Engineering, Seoul National University · Deep Learning, AI, Digital Twin">
-  <meta property="og:image" content="https://rottenbutcher.github.io/assets/banner.jpg">
+  <meta property="og:description" content="Naval Architecture & Ocean Engineering, SNU · Machine learning for maritime perception and structural design">
+  <meta property="og:image" content="https://rottenbutcher.github.io/assets/bg-poster.jpg">
   <meta property="og:url" content="https://rottenbutcher.github.io/">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/style.css">
+  <link rel="preload" as="image" href="assets/bg-poster.jpg">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+  <link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
 
-  <!-- 상단 배너 이미지 -->
-  <section class="hero">
-    <div class="container">
-      <p class="eyebrow">Welcome to</p>
-      <h1>Junseo’s Archive</h1>
-      <p class="lead">Machine learning for naval architecture &amp; ocean engineering — maritime 3D perception and simulation-informed design.</p>
+  <!-- 배경 영상: assets/bg.(mp4|webm) = PC, assets/bg-mobile.(mp4|webm) = 모바일 -->
+  <video class="bg-video" muted loop playsinline autoplay preload="auto" poster="assets/bg-poster.jpg" aria-hidden="true"></video>
+  <div class="bg-dim" aria-hidden="true"></div>
+
+  <!-- ===================== Header ===================== -->
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="#top">JUNSEO LEE<span>.</span></a>
+      <ul class="nav">
+        <li><a href="#about">About</a></li>
+        <li><a href="#research">Research &amp; Projects</a></li>
+        <li><a href="#publications">Presentations &amp; Publications</a></li>
+        <li><a href="#awards">Awards &amp; Honors</a></li>
+        <li><a href="#hobby">Hobby</a></li>
+      </ul>
+      <div class="header-right">
+        <a class="pill" href="assets/cv.pdf" download="Junseo_Lee_CV.pdf">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
+          CV
+        </a>
+        <button class="menu-btn" aria-label="Menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
     </div>
+  </header>
+
+  <!-- ===================== Hero ===================== -->
+  <section class="hero" id="top">
+    <div class="wrap">
+      <p class="eyebrow">Naval Architecture &amp; Ocean Engineering · Seoul National University</p>
+      <h1>JUNSEO LEE</h1>
+      <p class="sub">Machine learning for maritime 3D perception and simulation-informed structural design.</p>
+
+      <ul class="socials">
+        <li><a href="https://github.com/rottenbutcher" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.25.45-2.28 1.19-3.08-.12-.29-.52-1.46.11-3.04 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.58.23 2.75.11 3.04.74.8 1.19 1.83 1.19 3.08 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5Z"/></svg>
+        </a></li>
+        <li><a href="https://www.linkedin.com/in/jslee1211" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg>
+        </a></li>
+        <li><a href="mailto:junseo777@snu.ac.kr" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+        </a></li>
+      </ul>
+
+      <div class="actions">
+        <a class="pill solid lg" href="#about">About me</a>
+        <a class="pill lg" href="assets/cv.pdf" download="Junseo_Lee_CV.pdf">Download CV</a>
+      </div>
+    </div>
+    <div class="scroll-cue" aria-hidden="true">Scroll</div>
   </section>
 
-  <main class="container">
+  <main class="content">
 
-    <!-- 프로필 -->
-    <section class="profile">
-      <div class="avatar">
-        <img src="assets/profile.jpg" alt="Junseo Lee" onerror="this.remove()">
-        JL
-      </div>
-      <div>
-        <h2>Junseo Lee <span class="ko">이준서</span></h2>
-        <p class="affil">Department of Naval Architecture and Ocean Engineering,<br>Seoul National University</p>
-
-        <dl>
-          <dt>Education</dt>
-          <dd>B.S. in Naval Architecture and Ocean Engineering, SNU<br><span style="color:var(--muted)">Mar. 2022 – Feb. 2028 (expected)</span></dd>
-          <dt>Currently</dt>
-          <dd>Undergraduate Intern, OST Lab., SNU</dd>
-          <dt>Interests</dt>
-          <dd>
-            <div class="tags">
-              <span class="tag">Machine Learning</span>
-              <span class="tag">3D Representation Learning</span>
-              <span class="tag">Maritime Perception</span>
-              <span class="tag">Multi-Fidelity Modeling</span>
-              <span class="tag">Digital Twin</span>
-            </div>
-          </dd>
-        </dl>
-
-        <div class="btn-row">
-          <a class="btn primary" href="assets/cv.pdf" download="Junseo_Lee_CV.pdf">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12"/><path d="m7 10 5 5 5-5"/><path d="M5 21h14"/></svg>
-            Download CV
-          </a>
-          <a class="btn" href="https://github.com/rottenbutcher" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.86 10.92c.58.1.79-.25.79-.56v-2c-3.2.7-3.87-1.37-3.87-1.37-.52-1.33-1.28-1.68-1.28-1.68-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.68 0-1.25.45-2.28 1.19-3.08-.12-.29-.52-1.46.11-3.04 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.58.23 2.75.11 3.04.74.8 1.19 1.83 1.19 3.08 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5Z"/></svg>
-            GitHub
-          </a>
-          <a class="btn" href="mailto:junseo777@snu.ac.kr">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
-            Email
-          </a>
-          <a class="btn" href="https://www.linkedin.com/in/jslee1211" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z"/></svg>
-            LinkedIn
-          </a>
+    <!-- ===================== About ===================== -->
+    <section class="section" id="about">
+      <div class="wrap">
+        <div class="sec-head reveal"><h2>About</h2><span class="idx">01</span></div>
+        <div class="about reveal">
+          <div class="portrait"><img src="assets/profile.jpg" alt="Junseo Lee" loading="lazy"></div>
+          <div>
+            <p class="lede">I work at the intersection of machine learning and engineering — integrating physical principles and domain knowledge to support reliable analysis, interpretable predictions, and informed design decisions.</p>
+            <p class="bio">I am particularly interested in self-supervised learning of 3D geometric representations for maritime perception that is robust to partial observations, viewpoint changes, and limited real-world data. I also seek to explore simulation-informed learning and multi-fidelity modeling for structural analysis and optimization, balancing computational efficiency with physical understanding and engineering constraints.</p>
+            <dl class="facts">
+              <dt>Education</dt>
+              <dd>B.S. in Naval Architecture and Ocean Engineering, Seoul National University<small>Mar. 2022 – Feb. 2028 (expected)</small></dd>
+              <dt>Currently</dt>
+              <dd>Undergraduate Intern, OST Lab., SNU<small>Advisor: Prof. Dokyun Kim</small></dd>
+              <dt>Interests</dt>
+              <dd>
+                <div class="chips">
+                  <span class="chip">Machine Learning</span>
+                  <span class="chip">3D Representation Learning</span>
+                  <span class="chip">Maritime Perception</span>
+                  <span class="chip">Multi-Fidelity Modeling</span>
+                  <span class="chip">Digital Twin</span>
+                </div>
+              </dd>
+              <dt>Skills</dt>
+              <dd>Python, MATLAB, C/C++ · PyTorch, Open3D<small>Korean (native), English (fluent)</small></dd>
+            </dl>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section">
-      <div class="section-head"><h2>About</h2></div>
-      <p class="about">My research interests lie at the intersection of machine learning and engineering, with a focus on integrating physical principles and domain knowledge to support reliable analysis, interpretable predictions, and informed design decisions. I am particularly interested in self-supervised learning of 3D geometric representations for maritime perception that is robust to partial observations, viewpoint changes, and limited real-world data. I also seek to explore simulation-informed learning and multi-fidelity modeling for structural analysis and optimization, balancing computational efficiency with physical understanding and engineering constraints.</p>
-    </section>
+    <!-- ===================== Research & Projects ===================== -->
+    <section class="section" id="research">
+      <div class="wrap">
+        <div class="sec-head reveal"><h2>Research &amp; Projects</h2><span class="idx">02</span></div>
 
-    <!-- 바로가기 카드 -->
-    <section class="section">
-      <div class="section-head"><h2>Explore</h2></div>
-      <div class="cards">
-        <a class="card" href="research.html">
-          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6"/><path d="M10 3v6L4.5 18.5A2 2 0 0 0 6.2 21.5h11.6a2 2 0 0 0 1.7-3L14 9V3"/><path d="M7 15h10"/></svg></span>
-          <h3>Research &amp; Projects</h3>
-          <p>Internships and engineering projects</p>
-        </a>
-        <a class="card" href="publications.html">
-          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5V5a2 2 0 0 1 2-2h12v18H6a2 2 0 0 1-2-1.5Z"/><path d="M8 7h6M8 11h6"/></svg></span>
-          <h3>Presentations &amp; Publications</h3>
-          <p>Conference talks and papers</p>
-        </a>
-        <a class="card" href="awards.html">
-          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="6"/><path d="m8.5 14 -1.5 8 5-3 5 3-1.5-8"/></svg></span>
-          <h3>Awards &amp; Honors</h3>
-          <p>Scholarships and competitions</p>
-        </a>
-        <a class="card" href="hobby.html">
-          <span class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 4h-5L7 7H4a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1h-3l-2.5-3Z"/><circle cx="12" cy="13" r="3.5"/></svg></span>
-          <h3>Hobby</h3>
-          <p>Life outside the lab</p>
-        </a>
+        <h3 class="sub-title reveal">Research Experience</h3>
+        <ul class="rows">
+          <li class="row reveal">
+            <div class="when">Aug. 2026 – Present</div>
+            <div>
+              <h3>Undergraduate Intern</h3>
+              <p class="org">OST Lab., Seoul National University · Advisor: Prof. Dokyun Kim</p>
+              <ul>
+                <li>AI-based double hull tanker midship optimisation tool development</li>
+                <li>Multi-fidelity fluid–structure interaction analysis</li>
+              </ul>
+            </div>
+          </li>
+          <li class="row reveal">
+            <div class="when">Aug. 2025 – Feb. 2026</div>
+            <div>
+              <h3>Undergraduate Visiting Researcher</h3>
+              <p class="org">MORIN Lab., KAIST · Advisor: Prof. Jinwhan Kim</p>
+              <ul>
+                <li><strong>LiDAR-based maritime vessel re-identification (ReID).</strong> Developed CIEF-Net, a neural network that integrates local curvature features with spatial coordinates through early fusion for vessel re-identification.</li>
+                <li><strong>Cross-view representation learning under partial observations.</strong> Developed a cross-view masked autoencoder that learns vessel representations by reconstructing a target view from partial observations of another viewpoint.</li>
+                <li>Organized existing maritime sensor datasets for model development and evaluation, and participated in field experiments at Jeongok Port.</li>
+              </ul>
+              <div class="tags"><span class="tag">KROS 2026</span><span class="tag">UR 2026</span></div>
+            </div>
+          </li>
+        </ul>
+
+        <h3 class="sub-title reveal">Projects</h3>
+        <ul class="rows">
+          <li class="row reveal">
+            <div class="when">Sep. 2026</div>
+            <div>
+              <h3>AIDSHIP — AI-based Midship Section Design Support Software</h3>
+              <p class="org">Ocean Engineering CAE Contest (KSOE) · Team Leader</p>
+              <p class="desc">CSR-based structural assessment, sensitivity-based cost/weight optimisation, and a RAG-based LLM assistant for double hull tanker midship design.</p>
+              <div class="tags"><span class="tag gold">2nd Prize</span></div>
+            </div>
+          </li>
+          <li class="row reveal">
+            <div class="when">Jun. 2022</div>
+            <div>
+              <h3>Collision Detection Algorithm for Autonomous Ships</h3>
+              <p class="org">Autonomous Ship Contest for Freshmen, Seoul National University</p>
+              <div class="tags"><span class="tag gold">DSME Prize</span></div>
+            </div>
+          </li>
+        </ul>
       </div>
     </section>
 
-    <!-- 최근 소식: 필요한 항목을 추가/수정하세요 -->
-    <section class="section">
-      <div class="section-head"><h2>Highlights</h2></div>
-      <ul class="entries">
-        <li class="entry">
-          <div class="when">Oct. 2026</div>
+    <!-- ===================== Presentations & Publications ===================== -->
+    <section class="section" id="publications">
+      <div class="wrap">
+        <div class="sec-head reveal"><h2>Presentations &amp; Publications</h2><span class="idx">03</span></div>
+        <h3 class="sub-title reveal">Poster Presentations</h3>
+        <div class="cards">
+          <article class="card reveal">
+            <div class="meta">Sep. 2026 · KSOE Fall Conference</div>
+            <h3>AI 기반 선박 중앙단면 최적설계 지원 프로그램 개발</h3>
+            <p class="authors"><strong>이준서 (Junseo Lee)</strong>, 정우진, 진승우</p>
+            <div class="tags"><span class="tag">KSOE 2026</span><span class="tag gold">2nd Prize</span></div>
+          </article>
+          <article class="card reveal">
+            <div class="meta">Jul. 2026 · Osaka, Japan</div>
+            <h3>Maritime Vessel Re-Identification under Partial Observations Using Cross-View Masked Autoencoder</h3>
+            <p class="authors"><strong>Junseo Lee</strong>, Dongwook Lee, Sol Han, and Jinwhan Kim</p>
+            <div class="tags"><span class="tag">UR 2026</span></div>
+          </article>
+          <article class="card reveal">
+            <div class="meta">Feb. 2026 · PyeongChang, Korea</div>
+            <h3>Curvature-Integrated Early Fusion Network for LiDAR-Based Marine Vessel Re-Identification</h3>
+            <p class="authors"><strong>Junseo Lee</strong>, Dongwook Lee, and Jinwhan Kim</p>
+            <div class="tags"><span class="tag">KROS 2026</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== Awards & Honors ===================== -->
+    <section class="section" id="awards">
+      <div class="wrap">
+        <div class="sec-head reveal"><h2>Awards &amp; Honors</h2><span class="idx">04</span></div>
+
+        <h3 class="sub-title reveal">Honors &amp; Scholarships</h3>
+        <ul class="rows">
+          <li class="row reveal">
+            <div class="when">Oct. 2026</div>
+            <div>
+              <h3>ABS Scholarship</h3>
+              <p class="org">American Bureau of Shipping (ABS)</p>
+              <p class="desc">Selected as a 2026 ABS scholar in recognition of research capability in naval architecture and ocean engineering.</p>
+              <div class="tags"><span class="tag gold">Scholarship</span></div>
+            </div>
+          </li>
+          <li class="row reveal">
+            <div class="when">Jun. 2026</div>
+            <div>
+              <h3>Jeonggong Foundation Scholarship</h3>
+              <p class="org">Jeonggong Foundation (정공재단)</p>
+              <div class="tags"><span class="tag gold">Scholarship</span></div>
+            </div>
+          </li>
+        </ul>
+
+        <h3 class="sub-title reveal">Awards</h3>
+        <ul class="rows">
+          <li class="row reveal">
+            <div class="when">Sep. 2026</div>
+            <div>
+              <h3>2nd Prize, Ocean Engineering CAE Contest</h3>
+              <p class="org">The Korean Society of Ocean Engineers (KSOE)</p>
+              <p class="desc">Team leader — LLM-based midship optimisation software development.</p>
+              <div class="tags"><span class="tag gold">2nd Prize</span></div>
+            </div>
+          </li>
+          <li class="row reveal">
+            <div class="when">Jun. 2022</div>
+            <div>
+              <h3>DSME Prize, Autonomous Ship Contest for Freshmen</h3>
+              <p class="org">Seoul National University</p>
+              <p class="desc">Developed a collision detection algorithm.</p>
+              <div class="tags"><span class="tag gold">DSME Prize</span></div>
+            </div>
+          </li>
+        </ul>
+
+        <h3 class="sub-title reveal">Military Service</h3>
+        <ul class="rows">
+          <li class="row reveal">
+            <div class="when">Feb. 2024 – Aug. 2025</div>
+            <div>
+              <h3>DMZ East Corridor Patrol</h3>
+              <p class="org">Discharged as Sergeant</p>
+              <ul>
+                <li>Commendation for Successful Defection Inducement Operation (CJCS, Aug. 2024)</li>
+                <li>Certificate of Achievement (UNCMAC-S, Aug. 2025)</li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===================== Hobby ===================== -->
+    <section class="section" id="hobby">
+      <div class="wrap">
+        <div class="sec-head reveal"><h2>Hobby</h2><span class="idx">05</span></div>
+        <article class="feature reveal">
           <div>
-            <h3>Selected as a 2026 ABS Scholar</h3>
-            <p class="org">American Bureau of Shipping (ABS)</p>
-            <div class="meta"><a href="awards.html">Honors →</a></div>
+            <div class="meta">Side project · 2026</div>
+            <h3>Upbit LSTM Trader</h3>
+            <p>An end-to-end crypto trading research pipeline for the top-5 KRW markets on Upbit. It collects 5-minute candles, trains a 2-layer LSTM on a local GPU (RTX 5060) to forecast 30-minute returns, and runs the exported ONNX model every five minutes on a free-tier Oracle Cloud CPU instance — in paper-trading mode by default.</p>
+            <ul>
+              <li><strong>Leakage-aware evaluation</strong> — chronological train / validation / test split with label purging at the boundaries; scalers and buy thresholds are fitted on past data only.</li>
+              <li><strong>Model comparison</strong> — a Gaussian HMM baseline evaluated against the LSTM on the same bars, trading costs and risk limits.</li>
+              <li><strong>Execution safeguards</strong> — performance gates before any live order, stop-loss / take-profit and drawdown limits, and duplicate-safe order handling.</li>
+            </ul>
+            <div class="tags">
+              <span class="tag">Python</span><span class="tag">PyTorch</span><span class="tag">LSTM</span>
+              <span class="tag">HMM</span><span class="tag">ONNX Runtime</span><span class="tag">Oracle Cloud</span>
+            </div>
+            <p class="note">Built for learning and research — not investment advice.</p>
           </div>
-        </li>
-        <li class="entry">
-          <div class="when">Sep. 2026</div>
-          <div>
-            <h3>2nd Prize, Ocean Engineering CAE Contest (KSOE)</h3>
-            <p class="org">Team leader · LLM-based midship optimisation software</p>
-            <div class="meta"><a href="publications.html">Publications →</a> <a href="awards.html">Awards →</a></div>
-          </div>
-        </li>
-        <li class="entry">
-          <div class="when">Aug. 2026</div>
-          <div>
-            <h3>Joined OST Lab., Seoul National University</h3>
-            <p class="org">Undergraduate Intern · Advisor: Prof. Dokyun Kim</p>
-            <div class="meta"><a href="research.html">Research →</a></div>
-          </div>
-        </li>
-        <li class="entry">
-          <div class="when">Jul. 2026</div>
-          <div>
-            <h3>Poster presentation at UR 2026, Osaka</h3>
-            <p class="org">Maritime vessel re-identification under partial observations</p>
-            <div class="meta"><a href="publications.html">Publications →</a></div>
-          </div>
-        </li>
-        <li class="entry">
-          <div class="when">Feb. 2026</div>
-          <div>
-            <h3>Poster presentation at KROS 2026, PyeongChang</h3>
-            <p class="org">LiDAR-based marine vessel re-identification (CIEF-Net)</p>
-            <div class="meta"><a href="publications.html">Publications →</a></div>
-          </div>
-        </li>
-      </ul>
+          <a class="pill" href="https://github.com/rottenbutcher/upbit-lstm-trader" target="_blank" rel="noopener">View on GitHub</a>
+        </article>
+      </div>
     </section>
 
   </main>
 
-  <script src="assets/main.js"></script>
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>© <span id="year">2026</span> Junseo Lee</span>
+      <span class="links">
+        <a href="mailto:junseo777@snu.ac.kr">Email</a>
+        <a href="https://github.com/rottenbutcher" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/jslee1211" target="_blank" rel="noopener">LinkedIn</a>
+      </span>
+    </div>
+  </footer>
+
+  <script src="assets/site.js"></script>
 </body>
 </html>

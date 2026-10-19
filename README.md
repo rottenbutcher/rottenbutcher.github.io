@@ -5,23 +5,21 @@ Junseo Lee의 개인 홈페이지 (GitHub Pages, 순수 HTML/CSS).
 ## 폴더 구조
 
 ```
-index.html          홈 (상단 배너 + 프로필 + 바로가기)
-research.html       Research & Projects
-publications.html   Presentations & Publications
-awards.html         Awards
-hobby.html          Hobby
+index.html          한 페이지 사이트 (배경 영상 + About / Research / Publications / Awards / Hobby)
+research.html 등    예전 주소 호환용 — index.html의 해당 섹션으로 자동 이동
 .nojekyll           GitHub Pages가 파일을 그대로 서빙하도록
 assets/
-  style.css         전체 디자인
-  main.js           상단 메뉴(배너) + 푸터 — 메뉴 수정은 여기서 한 번만
+  site.css          전체 디자인 (강조색은 맨 위 --accent 한 줄로 변경)
+  site.js           배경 영상 재생, 스크롤 효과, 모바일 메뉴
+  bg.mp4 / bg.webm                 배경 영상 (PC)
+  bg-mobile.mp4 / bg-mobile.webm   배경 영상 (모바일, 가벼운 버전)
+  bg-poster.jpg     영상이 로드되기 전 / 동작 줄이기 설정 시 보이는 정지 화면
+  profile.jpg       프로필 사진
+  cv.pdf            CV (상단 CV 버튼 클릭 시 다운로드)
   favicon.svg
-  banner.jpg        ← 직접 넣기: 상단 배너 사진 (가로 2000px 정도 권장)
-  profile.jpg       ← 직접 넣기: 프로필 사진 (세로 4:5 비율 권장)
-  cv.pdf            ← 직접 넣기: CV PDF (상단 CV 버튼 클릭 시 자동 다운로드)
 ```
 
-사진·CV 파일이 아직 없으면 배너는 남색 그라데이션, 프로필은 "JL" 이니셜로 표시됩니다.
-파일 이름만 위와 똑같이 맞춰 넣으면 자동으로 바뀝니다.
+배경 영상을 바꾸려면 같은 이름으로 파일을 교체하세요. mp4(H.264)는 대부분의 브라우저용, webm은 그 외 브라우저용입니다.
 
 ## 배포 (GitHub Pages)
 
