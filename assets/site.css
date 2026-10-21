@@ -175,8 +175,11 @@ a { color: inherit; text-decoration: none; }
 
 /* About */
 .about { display: grid; grid-template-columns: 280px 1fr; gap: 56px; align-items: start; }
-.portrait { border-radius: 14px; overflow: hidden; aspect-ratio: 4 / 5; background: #111; filter: grayscale(0.15); }
-.portrait img { width: 100%; height: 100%; object-fit: cover; }
+.portrait {
+  border-radius: 14px; overflow: hidden; aspect-ratio: 4 / 5; border: 1px solid var(--line);
+  background: radial-gradient(120% 90% at 50% 20%, #1c2a3f 0%, #0d131d 60%, #07090d 100%);
+}
+.portrait img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
 .about .lede { margin: 0; font-size: clamp(1.15rem, 2vw, 1.4rem); line-height: 1.6; font-weight: 500; color: var(--text); }
 .about .bio { margin: 20px 0 0; color: var(--text-soft); }
 .facts { display: grid; grid-template-columns: 140px 1fr; gap: 14px 24px; margin: 36px 0 0; padding-top: 28px; border-top: 1px solid var(--line); }
@@ -310,3 +313,62 @@ a { color: inherit; text-decoration: none; }
   .news .when { grid-column: 1 / -1; }
   .news:hover { padding-left: 0; }
 }
+
+/* ---------- Images to the right of entries ---------- */
+.row.has-media { grid-template-columns: 170px 1fr 240px; }
+.media { display: flex; flex-direction: column; align-items: flex-end; gap: 20px; padding-top: 4px; }
+.media .logo { width: auto; height: auto; max-width: 170px; max-height: 48px; opacity: .88; }
+.media .logo.square { max-height: 76px; }
+.photo {
+  position: relative; display: block; width: 100%; overflow: hidden;
+  border-radius: 10px; border: 1px solid var(--line); background: #111; cursor: zoom-in;
+}
+.photo img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; object-position: center 40%; transition: transform .6s cubic-bezier(.2,.7,.2,1), filter .3s ease; filter: saturate(.9); }
+.photo:hover img { transform: scale(1.04); filter: none; }
+.photo::after {
+  content: ""; position: absolute; right: 8px; bottom: 8px; width: 26px; height: 26px; border-radius: 999px;
+  background: rgba(0,0,0,.55) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7'/%3E%3C/svg%3E") center / 13px no-repeat;
+  opacity: 0; transition: opacity .2s ease;
+}
+.photo:hover::after { opacity: 1; }
+@media (max-width: 980px) { .row.has-media { grid-template-columns: 130px 1fr 200px; gap: 24px; } }
+@media (max-width: 680px) {
+  .row.has-media { grid-template-columns: 1fr; }
+  .media { align-items: flex-start; flex-direction: row; flex-wrap: wrap; padding-top: 14px; }
+  .media .photo { max-width: 420px; }
+  .media .logo { max-width: 120px; max-height: 32px; }
+  .media .logo.square { max-height: 52px; }
+}
+
+/* About facts with a logo */
+.facts dd.with-logo { display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; }
+.fact-logo { flex: none; width: auto; height: auto; max-width: 120px; max-height: 30px; opacity: .85; margin-top: 4px; }
+.fact-logo.square { max-height: 52px; margin-top: 0; }
+
+/* Recent: small image before the arrow */
+.news { grid-template-columns: 150px 1fr 120px 40px; }
+.news .thumb { display: flex; justify-content: flex-end; align-items: center; }
+.news .thumb .photo { width: 108px; border-radius: 8px; pointer-events: none; }
+.news .thumb .photo::after { display: none; }
+.news .thumb-logo { width: auto; height: auto; max-width: 110px; max-height: 34px; opacity: .8; }
+.news .thumb-logo.square { max-height: 48px; }
+@media (max-width: 640px) {
+  .news { grid-template-columns: 1fr 76px 20px; }
+  .news .thumb .photo { width: 76px; }
+  .news .thumb-logo { max-width: 72px; max-height: 26px; }
+}
+
+/* ---------- Lightbox ---------- */
+.lightbox {
+  position: fixed; inset: 0; z-index: 100; display: flex; flex-direction: column; align-items: center; justify-content: center;
+  padding: 56px 20px 32px; background: rgba(0,0,0,.92);
+  opacity: 0; pointer-events: none; transition: opacity .25s ease; cursor: zoom-out;
+}
+.lightbox.open { opacity: 1; pointer-events: auto; }
+.lightbox img { max-width: min(1400px, 100%); max-height: calc(100vh - 140px); border-radius: 10px; box-shadow: 0 20px 60px rgba(0,0,0,.6); }
+.lightbox figcaption { margin-top: 14px; color: var(--text-soft); font-size: 0.9rem; text-align: center; }
+.lightbox .close {
+  position: absolute; top: 14px; right: 18px; width: 40px; height: 40px; border: 0; border-radius: 999px;
+  background: rgba(255,255,255,.1); color: #fff; font-size: 22px; line-height: 40px; cursor: pointer;
+}
+.lightbox .close:hover { background: rgba(255,255,255,.2); }

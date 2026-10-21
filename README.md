@@ -17,7 +17,10 @@ assets/
   bg.mp4 / bg.webm                 배경 영상 (PC)
   bg-mobile.mp4 / bg-mobile.webm   배경 영상 (모바일, 가벼운 버전)
   bg-poster.jpg     영상이 로드되기 전 / 동작 줄이기 설정 시 보이는 정지 화면
-  profile.jpg       프로필 사진
+  img/              사진·로고 (WebP). 사진은 목록용 *-sm.webp + 크게 보기용 *.webp
+                    로고는 흰 배경을 지우고 흰색 단색으로 변환한 logo-*.webp
+  img/profile.webp  프로필 사진 (배경 제거)
+  apple-touch-icon.png  휴대폰 홈 화면 아이콘
   cv.pdf            CV (상단 CV 버튼 클릭 시 다운로드)
   favicon.svg
 ```

@@ -84,4 +84,31 @@
     document.querySelectorAll(".reveal").forEach((el) => el.classList.add("in"));
   }
 
+
+  /* ---------- Lightbox for photos ---------- */
+  const photos = document.querySelectorAll("a.photo");
+  if (photos.length) {
+    const box = document.createElement("figure");
+    box.className = "lightbox";
+    box.setAttribute("role", "dialog");
+    box.setAttribute("aria-modal", "true");
+    box.innerHTML = '<button class="close" aria-label="Close">×</button><img alt=""><figcaption></figcaption>';
+    document.body.appendChild(box);
+    const img = box.querySelector("img");
+    const cap = box.querySelector("figcaption");
+    let last = null;
+    const close = () => { box.classList.remove("open"); document.body.style.overflow = ""; if (last) last.focus(); };
+    photos.forEach((a) => a.addEventListener("click", (e) => {
+      e.preventDefault();
+      last = a;
+      img.src = a.getAttribute("href");
+      img.alt = a.dataset.caption || "";
+      cap.textContent = a.dataset.caption || "";
+      box.classList.add("open");
+      document.body.style.overflow = "hidden";
+      box.querySelector(".close").focus();
+    }));
+    box.addEventListener("click", close);
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape" && box.classList.contains("open")) close(); });
+  }
 })();
