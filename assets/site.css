@@ -372,3 +372,18 @@ a { color: inherit; text-decoration: none; }
   background: rgba(255,255,255,.1); color: #fff; font-size: 22px; line-height: 40px; cursor: pointer;
 }
 .lightbox .close:hover { background: rgba(255,255,255,.2); }
+
+/* ---------- Game tiles (Hobby) ---------- */
+.games { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: 24px; max-width: 760px; }
+.game {
+  display: flex; flex-direction: column; overflow: hidden;
+  border: 1px solid var(--line); border-radius: 12px; background: rgba(255,255,255,0.02);
+  transition: border-color .25s ease, transform .25s ease, background-color .25s ease;
+}
+.game:hover { border-color: rgba(255,255,255,0.25); transform: translateY(-3px); background: var(--panel-hover); }
+.game img { width: 100%; height: auto; aspect-ratio: 315 / 250; object-fit: cover; }
+.game-body { display: flex; flex-direction: column; gap: 4px; padding: 16px 18px 18px; }
+.game strong { font-size: 1.05rem; }
+.game-meta { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); }
+.game-desc { color: var(--text-soft); font-size: 0.92rem; line-height: 1.55; margin-top: 4px; }
+@media (max-width: 560px) { .games { grid-template-columns: 1fr; } }
