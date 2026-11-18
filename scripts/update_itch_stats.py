@@ -41,6 +41,27 @@ for g in data.get("games", []):
     }
     print(f"{g.get('title')}: views={g.get('views_count')} downloads={g.get('downloads_count')}")
 
+# Keep a local copy of each cover so the site does not depend on itch.io's image server
+COVERS = os.path.join(os.path.dirname(OUT), "covers")
+os.makedirs(COVERS, exist_ok=True)
+for url, g in games.items():
+    src = g.get("cover")
+    if not src or not src.startswith("https://"):
+        continue
+    slug = url.rsplit("/", 1)[-1] or "game"
+    ext = os.path.splitext(src.split("?")[0])[1].lower()
+    ext = ext if ext in (".png", ".jpg", ".jpeg", ".gif", ".webp") else ".png"
+    dest = os.path.join(COVERS, slug + ext)
+    if not os.path.exists(dest):
+        try:
+            creq = urllib.request.Request(src, headers={"User-Agent": "rottenbutcher.github.io stats updater"})
+            with urllib.request.urlopen(creq, timeout=30) as r, open(dest, "wb") as f:
+                f.write(r.read())
+        except Exception as e:  # cover is optional
+            print("cover download failed for", url, e)
+            continue
+    g["cover_local"] = "assets/data/covers/" + slug + ext
+
 # Only rewrite the file (and so only commit) when a number actually changed
 old = {}
 if os.path.exists(OUT):

@@ -113,23 +113,53 @@
   }
 })();
 
-/* ---------- itch.io play stats (Hobby page) ----------
-   Numbers come from assets/data/itch-stats.json, refreshed hourly by
-   .github/workflows/itch-stats.yml. Change ITCH_STAT to "downloads" to show that count instead. */
+/* ---------- itch.io games & stats (Hobby page) ----------
+   Data: assets/data/itch-stats.json, refreshed hourly by .github/workflows/itch-stats.yml.
+   - Games already written in hobby.html get their count filled in.
+   - Any other published game on itch.io gets a tile added automatically.
+   Browser games show views; downloadable games show downloads. */
 (function () {
-  const ITCH_STAT = "views";
-  const LABEL = { views: "views", downloads: "plays", purchases: "purchases" };
-  const slots = document.querySelectorAll("[data-itch-url]");
-  if (!slots.length) return;
+  const grid = document.querySelector(".games");
+  if (!grid) return;
+  const esc = (t) => String(t == null ? "" : t).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const statText = (g) => {
+    const browser = g.type === "html";
+    const n = browser ? g.views : g.downloads;
+    return typeof n === "number" ? n.toLocaleString("en-US") + (browser ? " views" : " downloads") : "";
+  };
   fetch("assets/data/itch-stats.json?t=" + Date.now(), { cache: "no-store" })
     .then((r) => (r.ok ? r.json() : null))
     .then((data) => {
       if (!data || !data.games) return;
-      slots.forEach((el) => {
-        const g = data.games[el.dataset.itchUrl.replace(/\/$/, "")];
-        if (!g || typeof g[ITCH_STAT] !== "number") return;
-        el.textContent = g[ITCH_STAT].toLocaleString("en-US") + " " + LABEL[ITCH_STAT];
-        el.hidden = false;
+      const known = new Set();
+      document.querySelectorAll("[data-itch-url]").forEach((el) => {
+        const url = el.dataset.itchUrl.replace(/\/$/, "");
+        known.add(url);
+        const g = data.games[url];
+        if (!g) return;
+        const t = statText(g);
+        if (t) { el.textContent = t; el.hidden = false; }
+      });
+      Object.entries(data.games).forEach(([url, g]) => {
+        if (known.has(url) || g.published === false || !/^https:\/\//.test(url)) return;
+        const a = document.createElement("a");
+        a.className = "game";
+        a.href = url;
+        a.target = "_blank";
+        a.rel = "noopener";
+        const coverSrc = g.cover_local || (g.cover && /^https:\/\//.test(g.cover) ? g.cover : "");
+        const cover = coverSrc
+          ? `<img src="${esc(coverSrc)}" alt="${esc(g.title)} cover" width="315" height="250" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'game-nocover',textContent:this.alt.replace(/ cover$/,'')}))">`
+          : `<span class="game-nocover">${esc(g.title)}</span>`;
+        const t = statText(g);
+        a.innerHTML = `${cover}
+          <span class="game-body">
+            <strong>${esc(g.title)}</strong>
+            <span class="game-meta">${g.type === "html" ? "Play in browser" : "Download"}</span>
+            ${t ? `<span class="game-stats">${esc(t)}</span>` : ""}
+            ${g.short_text ? `<span class="game-desc">${esc(g.short_text)}</span>` : ""}
+          </span>`;
+        grid.appendChild(a);
       });
     })
     .catch(() => {});
