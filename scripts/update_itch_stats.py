@@ -34,6 +34,10 @@ for g in data.get("games", []):
         "views": g.get("views_count", 0),
         "downloads": g.get("downloads_count", 0),
         "purchases": g.get("purchases_count", 0),
+        "cover": g.get("cover_url"),
+        "short_text": g.get("short_text"),
+        "type": g.get("type"),
+        "published": g.get("published", False),
     }
     print(f"{g.get('title')}: views={g.get('views_count')} downloads={g.get('downloads_count')}")
 
