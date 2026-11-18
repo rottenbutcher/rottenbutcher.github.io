@@ -4,7 +4,9 @@ Runs in GitHub Actions (see .github/workflows/itch-stats.yml).
 Needs the repository secret ITCH_API_KEY (itch.io → Settings → API keys).
 Writes assets/data/itch-stats.json, which assets/site.js reads on the Hobby page.
 """
+import html
 import json
+import re
 import os
 import sys
 import urllib.request
@@ -40,6 +42,31 @@ for g in data.get("games", []):
         "published": g.get("published", False),
     }
     print(f"{g.get('title')}: views={g.get('views_count')} downloads={g.get('downloads_count')}")
+
+# Read each game's public page for its description and genre (not in the API)
+def page_info(url):
+    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 (rottenbutcher.github.io stats updater)"})
+    with urllib.request.urlopen(req, timeout=30) as r:
+        page = r.read().decode("utf-8", "replace")
+    info = {}
+    m = re.search(r'<meta[^>]+property="og:description"[^>]+content="([^"]*)"', page) or \
+        re.search(r'<meta[^>]+name="description"[^>]+content="([^"]*)"', page)
+    if m:
+        info["description"] = html.unescape(m.group(1)).strip()
+    m = re.search(r'<td>\s*Genre\s*</td>\s*<td>(.*?)</td>', page, re.S)
+    if m:
+        info["genre"] = ", ".join(html.unescape(x).strip() for x in re.findall(r">([^<]+)</a>", m.group(1)))
+    m = re.search(r'class="formatted_description[^"]*"[^>]*>(.*?)</div>', page, re.S)
+    if m:
+        text = re.sub(r"<[^>]+>", " ", m.group(1))
+        info["long_description"] = re.sub(r"\s+", " ", html.unescape(text)).strip()[:1500]
+    return info
+
+for url, g in games.items():
+    try:
+        g.update(page_info(url))
+    except Exception as e:
+        print("page read failed for", url, e)
 
 # Keep a local copy of each cover so the site does not depend on itch.io's image server
 COVERS = os.path.join(os.path.dirname(OUT), "covers")
