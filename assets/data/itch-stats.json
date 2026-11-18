@@ -1,15 +1,16 @@
 {
-  "updated_at": "2026-11-18T17:17:20+00:00",
+  "updated_at": "2026-11-18T17:18:37+00:00",
   "games": {
     "https://jslee777.itch.io/cityconquer": {
       "title": "Metropol Builder",
       "views": 0,
-      "downloads": 2,
+      "downloads": 7,
       "purchases": 0,
       "cover": "https://img.itch.zone/aW1nLzMyNDkyMTM3LnBuZw==/315x250%23c/blNfTR.png",
       "short_text": null,
       "type": "default",
-      "published": true
+      "published": true,
+      "cover_local": "assets/data/covers/cityconquer.png"
     },
     "https://jslee777.itch.io/quad": {
       "title": "QUADRIS",
@@ -19,7 +20,8 @@
       "cover": "https://img.itch.zone/aW1nLzMxOTI0OTA3LnBuZw==/315x250%23c/OMPoEQ.png",
       "short_text": null,
       "type": "html",
-      "published": true
+      "published": true,
+      "cover_local": "assets/data/covers/quad.png"
     },
     "https://jslee777.itch.io/unicorn-hunter": {
       "title": "Unicorn Hunter",
@@ -29,7 +31,8 @@
       "cover": "https://img.itch.zone/aW1nLzMxOTI1MDczLnBuZw==/315x250%23c/QB4ZPo.png",
       "short_text": null,
       "type": "html",
-      "published": true
+      "published": true,
+      "cover_local": "assets/data/covers/unicorn-hunter.png"
     }
   }
 }
