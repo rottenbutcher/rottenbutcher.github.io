@@ -155,9 +155,9 @@
         a.innerHTML = `${cover}
           <span class="game-body">
             <strong>${esc(g.title)}</strong>
-            <span class="game-meta">${g.type === "html" ? "Play in browser" : "Download"}</span>
+            <span class="game-meta">${g.genre ? esc(g.genre.replace(/, /g, " · ")) + " · " : ""}${g.type === "html" ? "Play in browser" : "Download"}</span>
             ${t ? `<span class="game-stats">${esc(t)}</span>` : ""}
-            ${g.short_text ? `<span class="game-desc">${esc(g.short_text)}</span>` : ""}
+            ${(g.short_text || g.description) ? `<span class="game-desc">${esc(g.short_text || g.description)}</span>` : ""}
           </span>`;
         grid.appendChild(a);
       });
