@@ -112,3 +112,25 @@
     document.addEventListener("keydown", (e) => { if (e.key === "Escape" && box.classList.contains("open")) close(); });
   }
 })();
+
+/* ---------- itch.io play stats (Hobby page) ----------
+   Numbers come from assets/data/itch-stats.json, refreshed hourly by
+   .github/workflows/itch-stats.yml. Change ITCH_STAT to "downloads" to show that count instead. */
+(function () {
+  const ITCH_STAT = "views";
+  const LABEL = { views: "views", downloads: "plays", purchases: "purchases" };
+  const slots = document.querySelectorAll("[data-itch-url]");
+  if (!slots.length) return;
+  fetch("assets/data/itch-stats.json?t=" + Date.now(), { cache: "no-store" })
+    .then((r) => (r.ok ? r.json() : null))
+    .then((data) => {
+      if (!data || !data.games) return;
+      slots.forEach((el) => {
+        const g = data.games[el.dataset.itchUrl.replace(/\/$/, "")];
+        if (!g || typeof g[ITCH_STAT] !== "number") return;
+        el.textContent = g[ITCH_STAT].toLocaleString("en-US") + " " + LABEL[ITCH_STAT];
+        el.hidden = false;
+      });
+    })
+    .catch(() => {});
+})();

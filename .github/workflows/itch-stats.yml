@@ -1,0 +1,35 @@
+name: Update itch.io stats
+
+on:
+  schedule:
+    - cron: "17 * * * *"   # every hour
+  workflow_dispatch:         # "Run workflow" button in the Actions tab
+
+permissions:
+  contents: write
+
+concurrency:
+  group: itch-stats
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Fetch stats
+        env:
+          ITCH_API_KEY: ${{ secrets.ITCH_API_KEY }}
+        run: python scripts/update_itch_stats.py
+      - name: Commit if changed
+        run: |
+          if [ -n "$(git status --porcelain assets/data)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add assets/data/itch-stats.json
+            git commit -m "Update itch.io stats"
+            git push
+          fi
