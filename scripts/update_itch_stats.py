@@ -89,17 +89,41 @@ for url, g in games.items():
             continue
     g["cover_local"] = "assets/data/covers/" + slug + ext
 
+# Follower count lives only on the public profile page
+followers = None
+try:
+    preq = urllib.request.Request("https://itch.io/profile/jslee777",
+                                  headers={"User-Agent": "Mozilla/5.0 (rottenbutcher.github.io stats updater)"})
+    with urllib.request.urlopen(preq, timeout=30) as r:
+        page = r.read().decode("utf-8", "replace")
+    m = re.search(r'([\d,]+)\s*</[^>]+>\s*<[^>]+>\s*Followers?\b', page) or \
+        re.search(r'([\d,]+)\s+[Ff]ollowers?\b', page) or \
+        re.search(r'[Ff]ollowers?\s*(?:<[^>]+>\s*)*\(?([\d,]+)\)?', page)
+    if m:
+        followers = int(m.group(1).replace(",", ""))
+    else:
+        print("follower count not found on profile page")
+        snippet = re.search(r".{0,200}[Ff]ollower.{0,200}", page, re.S)
+        print("context:", snippet.group(0) if snippet else "(no 'follower' text)")
+except Exception as e:
+    print("profile read failed", e)
+print("followers:", followers)
+
 # Only rewrite the file (and so only commit) when a number actually changed
 old = {}
 if os.path.exists(OUT):
     with open(OUT, encoding="utf-8") as f:
         old = json.load(f).get("games", {})
-if old == games:
+old_followers = None
+if os.path.exists(OUT):
+    with open(OUT, encoding="utf-8") as f:
+        old_followers = json.load(f).get("followers")
+if old == games and old_followers == followers:
     print("No change")
     sys.exit(0)
 
 os.makedirs(os.path.dirname(OUT), exist_ok=True)
 with open(OUT, "w", encoding="utf-8") as f:
-    json.dump({"updated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"), "games": games},
+    json.dump({"updated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"), "followers": followers, "games": games},
               f, ensure_ascii=False, indent=2)
 print("Updated", OUT)

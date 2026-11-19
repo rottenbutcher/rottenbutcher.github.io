@@ -142,7 +142,7 @@
         const list = Object.values(data.games).filter((g) => g.published !== false);
         const v = list.reduce((n, g) => n + (g.views || 0), 0);
         const d = list.reduce((n, g) => n + (g.downloads || 0), 0);
-        total.innerHTML = `<span class="nw">Total across ${list.length} games</span> <span class="nw"><strong>${fmt(v)}</strong> views</span> · <span class="nw"><strong>${fmt(d)}</strong> downloads</span>`;
+        total.innerHTML = `<span class="nw">Total across ${list.length} games</span> <span class="nw"><strong>${fmt(v)}</strong> views</span> · <span class="nw"><strong>${fmt(d)}</strong> downloads</span>${typeof data.followers === "number" && data.followers > 0 ? ` · <span class="nw"><strong>${fmt(data.followers)}</strong> ${data.followers === 1 ? "follower" : "followers"}</span>` : ""}`;
         total.hidden = false;
       }
       Object.entries(data.games).forEach(([url, g]) => {
