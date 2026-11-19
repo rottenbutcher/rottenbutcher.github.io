@@ -117,16 +117,13 @@
    Data: assets/data/itch-stats.json, refreshed hourly by .github/workflows/itch-stats.yml.
    - Games already written in hobby.html get their count filled in.
    - Any other published game on itch.io gets a tile added automatically.
-   Browser games show views; downloadable games show downloads. */
+   Each game shows views and downloads; the total line sums all published games. */
 (function () {
   const grid = document.querySelector(".games");
   if (!grid) return;
   const esc = (t) => String(t == null ? "" : t).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
-  const statText = (g) => {
-    const browser = g.type === "html";
-    const n = browser ? g.views : g.downloads;
-    return typeof n === "number" ? n.toLocaleString("en-US") + (browser ? " views" : " downloads") : "";
-  };
+  const fmt = (n) => (typeof n === "number" ? n : 0).toLocaleString("en-US");
+  const statText = (g) => `${fmt(g.views)} views · ${fmt(g.downloads)} downloads`;
   fetch("assets/data/itch-stats.json?t=" + Date.now(), { cache: "no-store" })
     .then((r) => (r.ok ? r.json() : null))
     .then((data) => {
@@ -140,6 +137,14 @@
         const t = statText(g);
         if (t) { el.textContent = t; el.hidden = false; }
       });
+      const total = document.querySelector(".games-total");
+      if (total) {
+        const list = Object.values(data.games).filter((g) => g.published !== false);
+        const v = list.reduce((n, g) => n + (g.views || 0), 0);
+        const d = list.reduce((n, g) => n + (g.downloads || 0), 0);
+        total.innerHTML = `<span class="nw">Total across ${list.length} games</span> <span class="nw"><strong>${fmt(v)}</strong> views</span> · <span class="nw"><strong>${fmt(d)}</strong> downloads</span>`;
+        total.hidden = false;
+      }
       Object.entries(data.games).forEach(([url, g]) => {
         if (known.has(url) || g.published === false || !/^https:\/\//.test(url)) return;
         const a = document.createElement("a");
