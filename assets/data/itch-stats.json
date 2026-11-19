@@ -1,10 +1,10 @@
 {
-  "updated_at": "2026-11-18T23:22:59+00:00",
+  "updated_at": "2026-11-19T03:41:03+00:00",
   "games": {
     "https://jslee777.itch.io/cityconquer": {
       "title": "Metropol Builder",
-      "views": 22,
-      "downloads": 12,
+      "views": 30,
+      "downloads": 15,
       "purchases": 0,
       "cover": "https://img.itch.zone/aW1nLzMyNDkyMTM3LnBuZw==/315x250%23c/blNfTR.png",
       "short_text": null,
@@ -17,25 +17,27 @@
     "https://jslee777.itch.io/quad": {
       "title": "QUADRIS",
       "views": 10,
-      "downloads": 0,
+      "downloads": 59,
       "purchases": 0,
       "cover": "https://img.itch.zone/aW1nLzMxOTI0OTA3LnBuZw==/315x250%23c/OMPoEQ.png",
       "short_text": null,
       "type": "html",
       "published": true,
       "genre": "Puzzle",
+      "long_description": "Blocks fall from all four directions. Quadris is a block puzzle with a twist: pieces enter from the North, East, South and West and fall toward the center line of the board. Fill a complete row or column to clear it, and the blocks outside get pulled in toward the center. Features 4-way falling blocks with a preview of the next 3 pieces and the direction each one comes from Clear rows and columns at the same time for CROSS bonuses, chain COMBOS , and go for a PERFECT CLEAR 3 difficulty levels: Easy, Normal and Hard Hold, ghost piece and wall kicks English and Korean (한국어) Works on desktop and mobile, and offline once downloaded Controls Action Keyboard Touch Move Arrow keys Drag Soft drop Arrow in the falling direction Drag forward Hard drop Space Flick forward / Drop button Rotate Z / X Tap left / right half Hold C / Shift Hold button Pause P / Esc ❚❚ button Difficulty Easy : bigger 14×14 board, slow speed, 3 lives, and blocks avoid directions that are almost blocked Normal : 12×12 board, 2 lives, and blocks avoid directions that are almost blocked Hard : fast, 1 life, no help Download Download Quadris-Download.zip , unzip it, and open index.html in any browser. You don't need to install anything. 사방에서 떨어지는 블록 퍼즐 Quadris 는 블록이 동·서·남·북 에서 들어와 가운데 판의 중심선을 향해 떨어지는 퍼즐 게임입니다. 가로줄이나 세로줄을 가득 채우면 사라지고, 바깥 블록이 중심 쪽으로 당겨집니다. 쉬움 / 보통 / 어려움 3단계 난이도 가로·세로를 동시에 지우면 크로스 보너스, 연속으로 지우면 콤보, 판을 다 비우면 퍼펙트 클리어 보관(Hold), 고스트 블록(떨어질 자리 미리보기), 벽 근처 회전 보정 한국어 / 영어 지원, PC와 모바일 모두 가능 다운로드 버전은 압축을 풀고 i",
       "cover_local": "assets/data/covers/quad.png"
     },
     "https://jslee777.itch.io/unicorn-hunter": {
       "title": "Unicorn Hunter",
       "views": 65,
-      "downloads": 0,
+      "downloads": 65,
       "purchases": 0,
       "cover": "https://img.itch.zone/aW1nLzMxOTI1MDczLnBuZw==/315x250%23c/QB4ZPo.png",
       "short_text": null,
       "type": "html",
       "published": true,
       "genre": "Simulation, Strategy",
+      "long_description": "Unicorn Hunter Read the pitch. Dig for the truth. Back the next $1B company. Play in English or 한국어. Pick your language when the game starts. You just closed your first venture fund: $50 million from investors who expect you to find the next unicorn. Every week, founders pitch you. Their decks look great. Some of them are lying. What you do Read the pitch, then dig deeper. Every founder has a face, a background and a story. Run reference checks, tech reviews and financial due diligence to find out whether that growth is real, whether the co-founders are about to split, or whether the CEO is being sued. Win the deal. Hot companies are expensive and rival VCs are circling. Push the valuation down and risk the founder walking, or fund the whole round to take a board seat. Live with your choices. Your companies raise new rounds, beg for bridge loans, fight big tech, lose key customers, get investigated and sometimes hide fraud. Stories play out over weeks, and your decisions change how they end. Ride the cycle. Liquidity booms, AI bubbles, VC winters and financial crises come and go. The central bank moves rates. Your LPs review you every year. Use leverage, carefully. Borrow against your credit rating or your portfolio. Miss a payment or get a margin call and it gets ugly fast. Exit on your terms. Sell any stake whenever you want, push for an acquisition, ride an IPO, or hold for the 100x. Features Weekly turns over a 10, 15 or 20-year fund, or an endless evergreen fund 40+ star",
       "cover_local": "assets/data/covers/unicorn-hunter.png"
     }
   }
