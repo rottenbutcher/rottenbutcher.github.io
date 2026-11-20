@@ -1,6 +1,6 @@
 {
-  "updated_at": "2026-11-20T00:35:35+00:00",
-  "followers": null,
+  "updated_at": "2026-11-20T08:30:42+00:00",
+  "followers": 1,
   "games": {
     "https://jslee777.itch.io/baseballife": {
       "title": "BasebalLife",
@@ -17,13 +17,15 @@
     },
     "https://jslee777.itch.io/cityconquer": {
       "title": "Metropol Builder",
-      "views": 59,
-      "downloads": 19,
+      "views": 66,
+      "downloads": 20,
       "purchases": 0,
       "cover": "https://img.itch.zone/aW1nLzMyNDkyMTM3LnBuZw==/315x250%23c/blNfTR.png",
       "short_text": null,
       "type": "default",
       "published": true,
+      "genre": "Strategy",
+      "long_description": "Build a living city — and answer to its voters. Metropol Builder is a 3D city builder for phones and PCs. Shape your own 20–40 km map, paint zones, lay roads and utilities, and watch people move in. Then govern it: every decision is a trade-off between growth, quality of life, the budget and the environment — and every four years, the citizens judge you at the ballot box. Design your land Plains, river cities, coastlines, islands or mountain basins — choose seas, rivers, lakes, mountains, forests and map size (20 / 30 / 40 km). Grow an organic city 11 zone types: low/medium/high-density housing, local and downtown commercial, offices, industry, high-tech, farmland, green space, forest reserve. Curved roads built from B-spline curves, with roundabout-style junctions, cul-de-sacs, crosswalks, street lights and tree-lined avenues. Apartment complexes with loop roads and courtyards, winding suburbs, business districts and industrial parks. Buildings age, get torn down under construction cranes, and are rebuilt — often denser as land values rise. Run the city Power, water, sewage and garbage; fire, police, health, education, parks and transit — from wind turbines to nuclear plants, bus depots to an international airport. Air, water and noise pollution spread across the map. Keep homes away from factories, intakes upstream, outfalls downstream. Taxes, loans, monthly budgets and info maps for pollution, land value and service coverage. Be the mayor Four factions — residents, workers",
       "cover_local": "assets/data/covers/cityconquer.png"
     },
     "https://jslee777.itch.io/quad": {
@@ -48,6 +50,8 @@
       "short_text": null,
       "type": "html",
       "published": true,
+      "genre": "Simulation, Strategy",
+      "long_description": "Unicorn Hunter Read the pitch. Dig for the truth. Back the next $1B company. Play in English or 한국어. Pick your language when the game starts. You just closed your first venture fund: $50 million from investors who expect you to find the next unicorn. Every week, founders pitch you. Their decks look great. Some of them are lying. What you do Read the pitch, then dig deeper. Every founder has a face, a background and a story. Run reference checks, tech reviews and financial due diligence to find out whether that growth is real, whether the co-founders are about to split, or whether the CEO is being sued. Win the deal. Hot companies are expensive and rival VCs are circling. Push the valuation down and risk the founder walking, or fund the whole round to take a board seat. Live with your choices. Your companies raise new rounds, beg for bridge loans, fight big tech, lose key customers, get investigated and sometimes hide fraud. Stories play out over weeks, and your decisions change how they end. Ride the cycle. Liquidity booms, AI bubbles, VC winters and financial crises come and go. The central bank moves rates. Your LPs review you every year. Use leverage, carefully. Borrow against your credit rating or your portfolio. Miss a payment or get a margin call and it gets ugly fast. Exit on your terms. Sell any stake whenever you want, push for an acquisition, ride an IPO, or hold for the 100x. Features Weekly turns over a 10, 15 or 20-year fund, or an endless evergreen fund 40+ star",
       "cover_local": "assets/data/covers/unicorn-hunter.png"
     }
   }
