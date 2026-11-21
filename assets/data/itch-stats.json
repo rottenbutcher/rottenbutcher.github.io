@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-20T23:58:11+00:00",
+  "updated_at": "2026-11-21T06:59:53+00:00",
   "followers": 1,
   "games": {
     "https://jslee777.itch.io/baseballife": {
@@ -11,12 +11,14 @@
       "short_text": null,
       "type": "default",
       "published": true,
+      "genre": "Sports, Simulation",
+      "long_description": "⚾ Baseballife 신인부터 은퇴까지, 한 야구선수의 일생을 직접 산다. Live one ballplayer's whole career, from the draft to the Hall of Fame. 🇰🇷 한국어 고졸 드래프트, 대학 진학, 아니면 바로 GBL 마이너 계약. 2군에서 버티다 콜업되고, 주전 경쟁을 하고, 연봉협상 테이블에 앉는다. FA로 대박을 노리거나 포스팅으로 바다를 건너고, 트레이드 통보를 받고, 상무에 입대하고, 언젠가는 유니폼을 벗는다. 가상 리그 두 개 : GBL(30팀, 162경기)과 KPL(10팀, 144경기) 투구 하나하나 계산하는 경기 엔진 : 타구 속도·발사각과 구장 크기로 결과가 갈린다 40개 구장이 전부 다르다 : 펜스 거리와 높이, 돔, 잔디 패턴, 담쟁이 외벽, 외야 수영장 직접 플레이 : 중계 화면에서 스윙 타이밍을 맞추고, 마운드에선 구종과 코스를 고른다 타자 / 투수 / 투타겸업, 자유 모드와 리얼 모드(쉬움·보통·어려움) 연봉조정, FA, 포스팅, 병역, 국가대표, 올스타, 시상식, 명예의 전당 한국어 / English, 모바일 터치 지원, 오프라인 플레이 🇺🇸 English Get drafted out of high school, go to college first, or sign straight with a GBL club and start in rookie ball. Grind in the minors, earn the call-up, win a starting job and sit down at the salary table. Chase a big free-agent deal, get posted overseas, get traded at the deadline, serve in the military, and one day hang up the uniform. Two fictional leagues : the GBL (30 teams, 162 games) and the KPL (10 teams, 144 games) Pitch-by-pitch engine : exit velocity, launch angle and ballpark size decide every ball in play 40 unique ballparks : fence distances and heights, domes, mowing patterns, ivy walls, an outfield pool Play it yourself : time your swing in a broadcast-style view, or call your own pitches Hitter / pitcher / two-way player, Free mode and Real mode (Easy · Normal · Hard) Arbitration, free agency, posting, military service, national team, All-Star Games, awards, Hall of Fame Korean and Engl",
       "cover_local": "assets/data/covers/baseballife.png"
     },
     "https://jslee777.itch.io/cityconquer": {
       "title": "Metropol Builder",
-      "views": 80,
-      "downloads": 24,
+      "views": 83,
+      "downloads": 25,
       "purchases": 0,
       "cover": "https://img.itch.zone/aW1nLzMyNDkyMTM3LnBuZw==/315x250%23c/blNfTR.png",
       "short_text": null,
@@ -41,13 +43,15 @@
     },
     "https://jslee777.itch.io/unicorn-hunter": {
       "title": "Unicorn Hunter",
-      "views": 79,
+      "views": 80,
       "downloads": 65,
       "purchases": 0,
       "cover": "https://img.itch.zone/aW1nLzMxOTI1MDczLnBuZw==/315x250%23c/QB4ZPo.png",
       "short_text": null,
       "type": "html",
       "published": true,
+      "genre": "Simulation, Strategy",
+      "long_description": "Unicorn Hunter Read the pitch. Dig for the truth. Back the next $1B company. Play in English or 한국어. Pick your language when the game starts. You just closed your first venture fund: $50 million from investors who expect you to find the next unicorn. Every week, founders pitch you. Their decks look great. Some of them are lying. What you do Read the pitch, then dig deeper. Every founder has a face, a background and a story. Run reference checks, tech reviews and financial due diligence to find out whether that growth is real, whether the co-founders are about to split, or whether the CEO is being sued. Win the deal. Hot companies are expensive and rival VCs are circling. Push the valuation down and risk the founder walking, or fund the whole round to take a board seat. Live with your choices. Your companies raise new rounds, beg for bridge loans, fight big tech, lose key customers, get investigated and sometimes hide fraud. Stories play out over weeks, and your decisions change how they end. Ride the cycle. Liquidity booms, AI bubbles, VC winters and financial crises come and go. The central bank moves rates. Your LPs review you every year. Use leverage, carefully. Borrow against your credit rating or your portfolio. Miss a payment or get a margin call and it gets ugly fast. Exit on your terms. Sell any stake whenever you want, push for an acquisition, ride an IPO, or hold for the 100x. Features Weekly turns over a 10, 15 or 20-year fund, or an endless evergreen fund 40+ star",
       "cover_local": "assets/data/covers/unicorn-hunter.png"
     }
   }
